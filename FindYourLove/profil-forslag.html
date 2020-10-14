@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Et forslag</title>
+</head>
+<body>
+
+	<div>
+		
+		<header>
+			<h1>FindYourLove - Profilforslag</h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li><a href="alle-profiler-terje.html">Alle profiler</a></li>
+       			<li><a href="profil-forslag.html">Profil-forslag</a></li>
+				<li><a href="valgfri-funksjonalitet.html">Eksperimentell funksjon</a></li>
+			</ul>
+		</nav>
+		
+		<main>
+		
+			<section>
+				<label>Tast inn ønsket alder</label>
+				<input id="alder-input" type="text"><br>
+				<label>Mann eller kvinne?</label>
+				<input id="kjønn-input" type="text">
+				<input id="forslag-btn" type="button" value="Vis forslag">
+			</section>
+			
+			<section>
+				<!-- Skriv ut en profil her -->
+				<ul id="profil-liste"></ul>
+
+
+			</section>
+			
+		</main>
+		
+	</div>
+	<script>
+		/* HTML ELEMENTER */ 
+
+		var alderInput = document.getElementById("alder-input");
+		var kjønnInput = document.getElementById("kjønn-input");
+		var forslagBtn = document.getElementById("forslag-btn");
+		var profilListe = document.getElementById("profil-liste");
+
+		/* ARRAYS */ 
+
+		var navnArray = ["Aleks Akselson", "Bjarne Borg", "Per Persson", "Anniken Amundsen", "Bitte Bjørk", "Sofia Sandnes"];
+    	var alderArray = [34, 28, 22, 32, 26, 24];
+    	var beskrivelseArray = ["Hei, jeg heter Aleks Akselson. Jeg eier en gård, og lever av å drifte denne. Så jeg håper du er glad i dyr! Jeg ser etter en person som har litt humor.",
+                            "Heisann. Mitt navn er Bjarne Borg, og jeg er på utkikk etter <i>The One</i>. Jeg er den beste tennisspilleren i Norge for tiden, så mye av min tid går med på trening og turneringer. Ser etter en person som er fleksibel, og glad i å trene!",
+                            "Hola. Mitt navn er Per Persson. Jeg er verken islandsk, eller svensk. Jeg liker å chille i sofaen, gjerne med hånda nedi en cheesedoodles-pose. Leter etter en som ikke MÅ gå topptur hver eneste dag.",
+                            "Hei, jeg heter Anniken Amundsen, og jeg er litt ny til dette online dating greiene. Jeg ser etter noen som har lyst til å ta en kaffe, eller bli med på en tur i marka. ",
+                            "Hei du! Jeg heter Bitte Bjørk, hva heter du? Jeg er makeup-artist, så du må tåle å være litt prøvekanin! Har en liten hund, så du kan ikke være allergisk.",
+                            "Heisann. Jeg er litt lei av å skrive profiler på dating-steder, så du må nesten bare være litt mann, og ta meg med ut på en hyggelig middag hvor vi kan bli kjent!"    ];
+    	var bildeArray = ["man1.jpg", "man2.jpg", "man3.jpg", "woman1.jpg", "woman2.jpg", "woman3.jpg"]
+
+		/* FUNKSJON */ 
+
+		function visProfil(){
+			profilListe.innerHTML="";
+			var kjønn = kjønnInput.value;
+			var alder = alderInput.value;
+				if (kjønn.toLowerCase() === "mann" && alder <= 24){
+					//profilListe.innerHTML = "";
+					profilListe.innerHTML += `
+					<li><strong>Navn:</strong> ${navnArray[2]}</li>
+					<li><strong>Alder:</strong> ${alderArray[2]}</li>
+					<li><strong>Egen beskrivelse:</strong> ${beskrivelseArray[2]}</li>
+					<li><strong>Bilde:</strong><br> <img src="images/${bildeArray[2]}"</li><hr>`}
+				else if (kjønn.toLowerCase() === "mann" && alder >= 25){
+				for(var i = 0; i<2;i++){
+					//profilListe.innerHTML ="";
+					profilListe.innerHTML += `
+					<li><strong>Navn:</strong> ${navnArray[i]}</li>
+					<li><strong>Alder:</strong> ${alderArray[i]}</li>
+					<li><strong>Egen beskrivelse:</strong> ${beskrivelseArray[i]}</li>
+					<li><strong>Bilde:</strong><br> <img src="images/${bildeArray[i]}"</li><hr>`}}
+				else if (kjønn.toLowerCase() === "kvinne" && alder <= 24){
+					//profilListe.innerHTML = "";
+					profilListe.innerHTML += `
+					<li><strong>Navn:</strong> ${navnArray[5]}</li>
+					<li><strong>Alder:</strong> ${alderArray[5]}</li>
+					<li><strong>Egen beskrivelse:</strong> ${beskrivelseArray[5]}</li>
+					<li><strong>Bilde:</strong><br> <img src="images/${bildeArray[5]}"</li><hr>`}
+				else if (kjønn.toLowerCase() === "kvinne" && alder >= 25){
+				for(var i = 3; i<5;i++){
+					//profilListe.innerHTML = "";
+					profilListe.innerHTML += `
+					<li><strong>Navn:</strong> ${navnArray[i]}</li>
+					<li><strong>Alder:</strong> ${alderArray[i]}</li>
+					<li><strong>Egen beskrivelse:</strong> ${beskrivelseArray[i]}</li>
+					<li><strong>Bilde:</strong><br> <img src="images/${bildeArray[i]}"</li><hr>`
+				}						
+				}
+		}
+
+		/* EVENT */ 
+
+		forslagBtn.onclick = visProfil;
+
+
+
+	</script>
+</body>
+</html>

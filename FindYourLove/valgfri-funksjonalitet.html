@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FindYourLove</title>
+</head>
+<body>
+
+	<div>
+		
+		<header>
+      <h1>FindYourLove - Alle profiler</h1>
+      <h2>Dette er en eksperimentell funksjon</h2>
+      <p>Her har jeg lagt til vår fantastiske algoritme, som viser hvor stor sjanse det er for at du og den du velger er en perfekt match.</p>
+      <p>Ved å trykke på knappen ved siden av profilen du velger, vil du få opp et resultat som viser hvor god kjemi dere kommer til å ha.</p>
+      <p>Denne funksjonen vil selvfølgelig gi deg et bedre resultat hvis du velger å kjøpe Premium-versionen av tjenesten vår :)</p>
+		</header>
+		
+		<nav>
+			<ul>
+        <li><a href="alle-profiler-terje.html">Alle profiler</a></li>
+        <li><a href="profil-forslag.html">Profil-forslag</a></li>
+        <li><a href="valgfri-funksjonalitet.html">Ekstra-funksjon. PS! BETA, KAN FORKORTES MED EN FUNKSJON TIL</a></li>
+			</ul>
+		</nav>
+		
+  </div>
+  <ul id="alle-profiler-liste"></ul>
+	<script>
+		
+        /* HTML ELEMENTER */
+
+    var alleProfiler = document.getElementById("alle-profiler-liste");
+    var profilerKnapp = document.getElementById("vis-profiler-knapp");
+    
+    /* ARRAYS */
+
+    var navnArray = ["Aleks Akselson", "Bjarne Borg", "Per Persson", "Anniken Amundsen", "Bitte Bjørk", "Sofia Sandnes"];
+    var alderArray = [34, 28, 22, 32, 26, 24];
+    var beskrivelseArray = ["Hei, jeg heter Aleks Akselson. Jeg eier en gård, og lever av å drifte denne. Så jeg håper du er glad i dyr! Jeg ser etter en person som har litt humor.",
+                            "Heisann. Mitt navn er Bjarne Borg, og jeg er på utkikk etter <i>The One</i>. Jeg er den beste tennisspilleren i Norge for tiden, så mye av min tid går med på trening og turneringer. Ser etter en person som er fleksibel, og glad i å trene!",
+                            "Hola. Mitt navn er Per Persson. Jeg er verken islandsk, eller svensk. Jeg liker å chille i sofaen, gjerne med hånda nedi en cheesedoodles-pose. Leter etter en som ikke MÅ gå topptur hver eneste dag.",
+                            "Hei, jeg heter Anniken Amundsen, og jeg er litt ny til dette online dating greiene. Jeg ser etter noen som har lyst til å ta en kaffe, eller bli med på en tur i marka. ",
+                            "Hei du! Jeg heter Bitte Bjørk, hva heter du? Jeg er makeup-artist, så du må tåle å være litt prøvekanin! Har en liten hund, så du kan ikke være allergisk.",
+                            "Heisann. Jeg er litt lei av å skrive profiler på dating-steder, så du må nesten bare være litt mann, og ta meg med ut på en hyggelig middag hvor vi kan bli kjent!"    ];
+    var bildeArray = ["man1.jpg", "man2.jpg", "man3.jpg", "woman1.jpg", "woman2.jpg", "woman3.jpg"];                  
+    var buttonArray = ["ekstra-button1", "ekstra-button2", "ekstra-button3","ekstra-button4", "ekstra-button5", "ekstra-button6"];
+    /* FOR LOOP FOR Å PUSHE PROFILENE */
+      for(i=0;i<navnArray.length;i++){
+      alleProfiler.innerHTML += `
+      <li><strong>Navn:</strong> ${navnArray[i]}</li>
+      <li><strong>Alder:</strong> ${alderArray[i]}</li>
+      <li><strong>Egen beskrivelse:</strong> ${beskrivelseArray[i]}</li>
+      <li><strong>Bilde:</strong><br><img src="images/${bildeArray[i]}"><input type="button" id="${buttonArray[i]}" value="Trykk her for å bruke vår prisbelønnede algoritme"></li><hr>`
+    }
+    var ekstraButton1 = document.getElementById("ekstra-button1");
+    var ekstraButton2 = document.getElementById("ekstra-button2");
+    var ekstraButton3 = document.getElementById("ekstra-button3");
+    var ekstraButton4 = document.getElementById("ekstra-button4");
+    var ekstraButton5 = document.getElementById("ekstra-button5");
+    var ekstraButton6 = document.getElementById("ekstra-button6");
+
+    var button1Clicked = false;
+    var button2Clicked = false;
+    var button3Clicked = false;
+    var button4Clicked = false;
+    var button5Clicked = false;
+    var button6Clicked = false;
+
+    ekstraButton1.onclick = function(){
+      if (button1Clicked === false) {
+      button1Clicked = true;
+      visResultat(navnArray[0])}
+      else {
+        alert("Du må kjøpe Ekstra-Premium versionen av Find Your Love for å få lov til å trykke to ganger")
+      }
+    }
+    ekstraButton2.onclick = function(){
+      if (button2Clicked === false) {
+      button2Clicked = true;
+      visResultat(navnArray[1])}
+      else {
+        alert("Du må kjøpe Ekstra-Premium versionen av Find Your Love for å få lov til å trykke to ganger")
+      }
+    }
+    ekstraButton3.onclick = function(){
+      if (button3Clicked === false) {
+      button3Clicked = true;
+      visResultat(navnArray[2])}
+      else {
+        alert("Du må kjøpe Ekstra-Premium versionen av Find Your Love for å få lov til å trykke to ganger")
+      }
+    }
+    ekstraButton4.onclick = function(){
+      if (button4Clicked === false) {
+      button4Clicked = true;
+      visResultat(navnArray[3])}
+      else {
+        alert("Du må kjøpe Ekstra-Premium versionen av Find Your Love for å få lov til å trykke to ganger")
+      }
+    }
+    ekstraButton5.onclick = function(){
+      if (button5Clicked === false) {
+      button5Clicked = true;
+      visResultat(navnArray[4])}
+      else {
+        alert("Du må kjøpe Ekstra-Premium versionen av Find Your Love for å få lov til å trykke to ganger")
+      }
+    }
+    ekstraButton6.onclick = function(){
+      if (button6Clicked === false) {
+      button6Clicked = true;
+      visResultat(navnArray[5])}
+      else {
+        alert("Du må kjøpe Ekstra-Premium versionen av Find Your Love for å få lov til å trykke to ganger")
+      }
+    }
+    
+
+    function visResultat(navn){
+      alert(`Du og ${navn} har en ${Math.floor(Math.random()*100)}% sjanse for å finne kjærligheten!`)
+      
+      };
+
+    
+
+</script>
+<a href="#"><input type="button" value="Fortsett å søk etter kjærligheten, på toppen av siden"></a>	
+</body>
+</html>

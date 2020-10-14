@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FindYourLove</title>
+</head>
+<body>
+
+	<div>
+		
+		<header>
+			<h1>FindYourLove - Alle profiler</h1>
+		</header>
+		
+		<nav>
+			<ul>
+                <li><a href="alle-profiler-terje.html">Alle profiler</a></li>
+                <li><a href="profil-forslag.html">Profil-forslag</a></li>
+		            <li><a href="valgfri-funksjonalitet.html">Ekstra-funksjon. PS! BETA, KAN FORKORTES MED EN FUNKSJON TIL</a></li>
+			</ul>
+		</nav>
+		
+  </div>
+  <ul id="alle-profiler-liste"></ul>
+	<script>
+		
+        /* HTML ELEMENTER */
+
+    var alleProfiler = document.getElementById("alle-profiler-liste");
+    var profilerKnapp = document.getElementById("vis-profiler-knapp");
+    
+    /* ARRAYS */
+
+    var navnArray = ["Aleks Akselson", "Bjarne Borg", "Per Persson", "Anniken Amundsen", "Bitte Bjørk", "Sofia Sandnes"];
+    var alderArray = [34, 28, 22, 32, 26, 24];
+    var beskrivelseArray = ["Hei, jeg heter Aleks Akselson. Jeg eier en gård, og lever av å drifte denne. Så jeg håper du er glad i dyr! Jeg ser etter en person som har litt humor.",
+                            "Heisann. Mitt navn er Bjarne Borg, og jeg er på utkikk etter <i>The One</i>. Jeg er den beste tennisspilleren i Norge for tiden, så mye av min tid går med på trening og turneringer. Ser etter en person som er fleksibel, og glad i å trene!",
+                            "Hola. Mitt navn er Per Persson. Jeg er verken islandsk, eller svensk. Jeg liker å chille i sofaen, gjerne med hånda nedi en cheesedoodles-pose. Leter etter en som ikke MÅ gå topptur hver eneste dag.",
+                            "Hei, jeg heter Anniken Amundsen, og jeg er litt ny til dette online dating greiene. Jeg ser etter noen som har lyst til å ta en kaffe, eller bli med på en tur i marka. ",
+                            "Hei du! Jeg heter Bitte Bjørk, hva heter du? Jeg er makeup-artist, så du må tåle å være litt prøvekanin! Har en liten hund, så du kan ikke være allergisk.",
+                            "Heisann. Jeg er litt lei av å skrive profiler på dating-steder, så du må nesten bare være litt mann, og ta meg med ut på en hyggelig middag hvor vi kan bli kjent!"    ];
+    var bildeArray = ["man1.jpg", "man2.jpg", "man3.jpg", "woman1.jpg", "woman2.jpg", "woman3.jpg"]                          
+    
+    /* FOR LOOP FOR Å PUSHE PROFILENE */
+      for(i=0;i<navnArray.length;i++){
+      alleProfiler.innerHTML += `
+      <li><strong>Navn:</strong> ${navnArray[i]}</li>
+      <li><strong>Alder:</strong> ${alderArray[i]}</li>
+      <li><strong>Egen beskrivelse:</strong> ${beskrivelseArray[i]}</li>
+      <li><strong>Bilde:</strong> <img src="images/${bildeArray[i]}"</li>`
+    }
+
+</script>
+<a href="#"><input type="button" value="Fortsett å søk etter kjærligheten, på toppen av siden"></a>	
+</body>
+</html>
